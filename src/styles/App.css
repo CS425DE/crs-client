@@ -1,0 +1,145 @@
+
+.navbar {
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: lightgray;
+}
+
+.navbar__links {
+    gap: 10px;
+    display: flex;
+}
+
+.Home {
+    padding: 20px;
+} */
+
+Carousel.Caption h5{
+
+color: white;
+}
+
+/* Apply styles to the overall container */
+#signUpBody {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Style the content section */
+  .signup-content {
+    max-width: 100%;
+    margin-right: 20px;
+  }
+  
+  .signup-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .signup-content h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .signup-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .signup-content a {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff; /* Blue color for the link */
+  }
+  
+  /* Style the form container */
+  /* .signUpchild {
+    
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  } */
+
+  #signUpDetail{
+    max-width: 70%; /* Set the width to 70% */
+  }
+  
+  .signUpchild h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the form input fields */
+  .signUpchild label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Style the "Sign Up" button */
+  .signUpchild button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Style form input fields and button on hover */
+  .signUpchild button:hover, .signUpchild input:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff;
+  }
+
+  #signUpBody {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Style the first signup child with 70% width */
+  #signUpDetail {
+    flex: 70%; /* Set the first child to 70% width */
+  }
+  
+  /* Style the second signup child with 30% width */
+  .signUpchild {
+    flex: 30%; /* Set the second child to 30% width */
+  }
+  
+  .signup-content {
+  flex: 1; /* Set the first child to take up 50% of the available width */
+  max-width: 100%;
+  margin-right: 20px;
+}
+
+/* Style the form container */
+.signUpchild {
+  flex: 1; /* Set the second child to take up 50% of the available width */
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  margin-left: 300px;
+    margin-top: -139px;
+    overflow-y: auto;
+}
+.content1 {
+  margin-left: 300px;
+    margin-top: -214px;
+    overflow-y: auto;
+}
