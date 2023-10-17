@@ -4,15 +4,7 @@ import MyButton from "../../components/UI/button/MyButton";
 import { useNavigate } from "react-router";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import fordImg from "../../images/ford.jpg";
-import teslaImg from "../../images/tesla.jpg";
-import lamImg from "../../images/lam.jpg";
-import Carousel from "react-bootstrap/Carousel";
 import CustomerService from "../../API/CustomerService";
 const SignUp = () => {
   const navigate = useNavigate();

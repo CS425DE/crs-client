@@ -14,25 +14,24 @@ import MyReservations from "../pages/customer/MyReservations";
 import NewReservation from "../pages/customer/NewReservation";
 import ReservationDetails from "../pages/customer/ReservationDetails";
 
-
 export const privateCustomerRoutes = [
-    {path: '/', component: <CustomerHome/>},
-    {path: '/info', component: <CustomerInfo />},
-    {path: '/reservations', component: <MyReservations />},
-    {path: '/reservations/:reservationId', component: <ReservationDetails />},
-    {path: '/reservations/new', component: <NewReservation />},
-]
+  { path: "/", component: <CustomerHome /> },
+  { path: "/info", component: <CustomerInfo /> },
+  { path: "/reservations", component: <MyReservations /> },
+  { path: "/reservations/:reservationId", component: <ReservationDetails /> },
+  { path: "/reservations/new", component: <NewReservation /> },
+];
 
 export const privateAdminRoutes = [
-    {path: '/', component: <AdminHome/>},
-    {path: '/reservations/:reservationId', component: <ReservationDetails />},
-    {path: '/vehicles', component: <VehiclesList />},
-    {path: '/vehicles/:id', component: <VehicleDetails />},
-    {path: '/vehicles/new', component: <NewVehicle />},
-    {path: '/customers', component: <CustomersList />},
-    {path: '/discounts', component: <DiscountsList />},
-    {path: '/discounts/:id', component: <DiscountDetails />},
-    {path: '/discounts/new', component: <NewDiscount />},
-    {path: '/reports', component: <ReportList />},
-    {path: '/reports/new', component: <NewReport />},
-]
+  { path: "/", component: <AdminHome /> },
+  { path: "/reservations/:reservationId", component: <ReservationDetails /> },
+  { path: "/vehicles", component: <VehiclesList /> },
+  { path: "/vehicles/:id", component: <VehicleDetails /> },
+  { path: "/vehicles/new", component: <NewVehicle /> },
+  { path: "/customers", component: <CustomersList /> },
+  { path: "/discounts", component: <DiscountsList /> },
+  { path: "/discounts/:id", component: <DiscountDetails /> },
+  { path: "/discounts/new", component: <NewDiscount /> },
+  { path: "/reports", component: <ReportList /> },
+  { path: "/reports/new", component: <NewReport /> },
+];
