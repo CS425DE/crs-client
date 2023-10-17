@@ -10,7 +10,7 @@ const MyReservations = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const reservations = await ReservationService.getAllByCustomerId(1);
+            const reservations = await ReservationService.getAllByCustomerId(localStorage.getItem("id"));
             setReservations(reservations.data);
         };
         fetchData();
@@ -48,7 +48,7 @@ const MyReservations = () => {
                 <tbody>
                 {reservations.map((res, index) => (
                     <tr key={index}>
-                        <td>{res.reservationId}</td>
+                        <td>{res.id}</td>
                         <td>{res.startDate}</td>
                         <td>{res.returnDate}</td>
                         <td>{res.rentalCharge}</td>
@@ -57,7 +57,7 @@ const MyReservations = () => {
                         <td>{res.vehicle.make}</td>
                         <td>{res.createdAt}</td>
                         <td>
-                            <MyButton onClick={() => handleEdit(res.reservationId)}>Edit</MyButton>
+                            <MyButton onClick={() => handleEdit(res.id)}>Edit</MyButton>
                            {res.status === 'COMPLETED' ? <MyButton onClick={handleDelete}>Delete</MyButton> : null } 
                            {res.status === 'PENDING_PAYMENT' ? <MyButton onClick={handlePayment}>Pay</MyButton> : null } 
                         </td>

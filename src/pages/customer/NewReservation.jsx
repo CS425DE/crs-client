@@ -3,6 +3,7 @@ import MyInput from "../../components/UI/input/MyInput";
 import MyButton from "../../components/UI/button/MyButton";
 import {useNavigate} from "react-router";
 import VehicleService from '../../API/VehicleService';
+import ReservationService from '../../API/ReservationService';
 
 const NewReservation = () => {
 
@@ -25,10 +26,16 @@ const NewReservation = () => {
 
 
 
-    function handleSubmit()  {
+    function handleSubmit(event)  {
+        event.preventDefault();
         // submit new reservation
         console.log(reservation);
-        navigate('/my-reservations');
+        ReservationService.create(reservation).then(response =>{
+           
+            
+        })
+        navigate('/my-reservations')
+       
 
     }
 
@@ -47,8 +54,8 @@ const NewReservation = () => {
                 <label htmlFor="vehicle">Choose available vehicle:</label>
                 <select name="vehicleId" onChange={handleInputChange} value={reservation.vehicleId}>
                     {vehicles.map((vehicle) => {
-                        const { vehicleId, make, model, year, color, numberOfSeats, fuelType, price, transmission } = vehicle;
-                        return (<option key={vehicleId} value={vehicleId}>{`${make} ${model}
+                        const { id, make, model, year, color, numberOfSeats, fuelType, price, transmission } = vehicle;
+                        return (<option key={id} value={id}>{`${make} ${model}
                         (${color}, ${year}, ${numberOfSeats}, ${fuelType}, ${price}, ${transmission})`}</option>
                     )})}
                 </select><br/>

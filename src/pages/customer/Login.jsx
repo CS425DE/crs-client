@@ -21,30 +21,52 @@ const Login = () => {
   const { setIsAuth, setIsAdmin, setIsCustomer } = useContext(AuthContext);
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
-    email: "",
+    username: "",
     password: "",
     user: "customer",
   });
-  const login = async (event) => {
+  const login =  (event) => {
     event.preventDefault();
     if (loginData.user === "admin") {
-      let user = await AdminService.login(loginData);
-      setIsAdmin(true);
-            localStorage.setItem("admin", "true");
-            localStorage.setItem("auth", "true");
-            setIsAuth(true);
+      AdminService.login(loginData).then(response =>{
+        let user = response.data;
+        if(user.id === null){
+          alert("User Not Found")
+        }else{
+          setIsAdmin(true);
+        localStorage.setItem("admin", "true");
+        localStorage.setItem("auth", "true");
+        localStorage.setItem("id", user.id);
+        setIsAuth(true);
+          navigate("/");
+        }
+      }).catch((error) => {
+        console.log("Error :" + error);
+      });
+      
+     
     } else {
-        let user = await CustomerService.login(loginData);
-        setIsCustomer(true);
-            localStorage.setItem("customer", "true");
-            localStorage.setItem("auth", "true");
-            setIsAuth(true);
+      CustomerService.login(loginData).then(response =>{
+        let user = response.data;
+        if(user.id === null){
+          alert("User Not Found")
+        }else{
+          setIsCustomer(true);
+          localStorage.setItem("customer", "true");
+          localStorage.setItem("auth", "true");
+          localStorage.setItem("id", user.id);
+          setIsAuth(true);
+          navigate("/");
+        }
+      }).catch((error) => {
+        console.log("Error :" + error);
+      });
        
     }
     
     
     console.log(loginData);
-   navigate("/");
+   //
   };
   function handleInputChange(e) {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -66,9 +88,9 @@ const Login = () => {
           <Form className="d-flex">
             <Form.Control
               placeholder="Email"
-              aria-label="Email"
+              aria-label="username"
               aria-describedby="basic-addon1"
-              name="email"
+              name="username"
             type="text" 
              onChange={handleInputChange}
             />

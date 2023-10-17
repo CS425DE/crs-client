@@ -8,28 +8,33 @@ const CustomerInfo = () => {
     const navigate = useNavigate();
     const { customerId } = useParams();
     const [customer, setCustomer] = useState({
-        firstName: 'Abror',
-        lastName: 'Khamidov',
-        email: 'test@gmail.com',
-        phone: '224-4243-342',
-        password: '12345',
-        driverLicense: '2132ABDS'
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        password: '',
+        driverLicense: ''
     })
 
     useEffect(() => {
         const fetchData = async () => {
-            const customer = await CustomerService.getCustomerById(customerId);
+            const customer = await CustomerService.getCustomerById(localStorage.getItem("id"));
             setCustomer(customer.data);
         }
         fetchData()
-    })
+    },[])
     function handleInputChange(e) {
         setCustomer({...customer, [e.target.name]: e.target.value})
     }
 
     const handleSubmit = event => {
         console.log(customer)
-        navigate('/');
+        CustomerService.update(localStorage.getItem("id"),customer).then(
+            response =>{
+                alert("Successfully Updated");
+            }
+        );
+        //navigate('/');
     }
 
     return (

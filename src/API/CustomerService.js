@@ -24,4 +24,8 @@ export default class CustomerService {
         const response = await axios.post('http://localhost:8080/api/car-rental/customers/login', data)
         return response;
     }
+    static async getCustomerById(customerId) {
+        const response = await axios.get('http://localhost:8080/api/car-rental/customers/'+customerId)
+        return response;
+    }
 }

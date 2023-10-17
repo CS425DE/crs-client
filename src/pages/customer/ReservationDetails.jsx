@@ -40,7 +40,9 @@ const ReservationDetails = () => {
 
     async function  handleSubmit(e)  {
         e.preventDefault();
-        await ReservationService.update(reservationId, reservation);
+      ReservationService.update(reservationId, reservation).then(response =>{
+        
+      })
         navigate('/reservations');
     }
 
